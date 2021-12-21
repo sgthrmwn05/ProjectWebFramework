@@ -50,15 +50,17 @@ Route::get('/dashboard/schedule', function () {
 
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
-// Route::get('/book', function () {
-//     return view('book', [
-//         "title" => "Tambah Sewa"
-//     ]);
-// });
+Route::get('/dashboard/recap', function () {
+    $books = Book::latest();
 
-Route::get('/recap', function () {
-    return view('recap', [
-        "title" => "Rekapitulasi"
+    if (request('search')) {
+        $books->where('tanggal', 'like', '%' . request('search') . '%');
+    }
+
+    return view('dashboard.recap', [
+        "title" => "Rekapitulasi",
+        'books' => Book::all(),
+        "books" => $books->get()
     ]);
 });
 
@@ -68,15 +70,3 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
-
-// Route::get('/book', [BookController::class, 'store']);
-
-// Route::resource('/create', BookController::class)->middleware('auth');
-
-// Route::get('/schedule', [BookController::class, 'index'])->middleware('auth');
-// Route::get('/create', [BookController::class, 'create'])->middleware('auth');
-// Route::post('/store', [BookController::class, 'store'])->middleware('auth');
-
-// Route::resource('/schedule', ScheduleController::class)->middleware('auth');
-
-// Route::get('/dashboard/posts/{id}', [DashboardPostController::class, 'show']);

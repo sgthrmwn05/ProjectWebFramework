@@ -53,7 +53,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Rekapitulasi">
-          <a class="nav-link" href="/recap">
+          <a class="nav-link" href="/dashboard/recap">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Rekapitulasi</span>
           </a>
@@ -108,7 +108,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Sistem Informasi Booking Online Lapangan Futsal</small>
+          <small>Sistem Informasi Booking Lapangan Futsal</small>
         </div>
       </div>
     </footer>

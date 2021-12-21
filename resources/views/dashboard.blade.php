@@ -59,7 +59,7 @@
           </div>
           <div class="mr-5">Rekapitulasi</div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" href="/recap">
+        <a class="card-footer text-white clearfix small z-1" href="/dashboard/recap">
           <span class="float-left">View Details</span>
           <span class="float-right">
             <i class="fa fa-angle-right"></i>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Storage;
 
 class DashboardPostController extends Controller
@@ -52,13 +53,13 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->file('image')->store('book-images');
+        $todayDate = date('m/d/y');
 
         $validatedData = $request->validate([
             'nama' => ['required', 'max:255'],
             'no_hp' => ['required', 'min:11', 'max:13'],
             'lapangan' => ['required'],
-            'tanggal' => ['required'],
+            'tanggal' => ['required', 'after_or_equal:'.$todayDate],
             'jam' => ['required'],
             'uang_muka' => ['required'],
             'image' => ['image', 'file', 'max:1024']
@@ -81,10 +82,7 @@ class DashboardPostController extends Controller
      */
     public function show(Book $book)
     {
-        // $data = Book::findOrFail(id);
-        // return view('/dashboard/posts/show')->with([
-        //     'data' => $data
-        // ]);
+
     }
 
     /**
@@ -116,11 +114,13 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $todayDate = date('m/d/y');
+
         $validatedData = $request->validate([
             'nama' => ['required', 'max:255'],
             'no_hp' => ['required', 'min:11', 'max:13'],
             'lapangan' => ['required'],
-            'tanggal' => ['required'],
+            'tanggal' => ['required', 'after_or_equal:'.$todayDate],
             'jam' => ['required'],
             'uang_muka' => ['required']
         ]);
