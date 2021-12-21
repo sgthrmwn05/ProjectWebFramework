@@ -27,7 +27,7 @@
           </div>
           <div class="mr-5">Daftar Penyewaan</div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" href="/schedule">
+        <a class="card-footer text-white clearfix small z-1" href="/dashboard/schedule">
           <span class="float-left">View Details</span>
           <span class="float-right">
             <i class="fa fa-angle-right"></i>
@@ -43,7 +43,7 @@
           </div>
           <div class="mr-5">Tambah Sewa</div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" href="/book">
+        <a class="card-footer text-white clearfix small z-1" href="/dashboard/posts">
           <span class="float-left">View Details</span>
           <span class="float-right">
             <i class="fa fa-angle-right"></i>

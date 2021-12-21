@@ -9,20 +9,20 @@
   <meta name="author" content="">
   <title>Futsal 88 - {{ $title }}</title>
   <!-- Bootstrap core CSS-->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="../../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="../../../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="../../../css/sb-admin.css" rel="stylesheet">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="/">Futsal 88</a>
+    <a class="navbar-brand" href="/">Selamat Datang, {{ auth()->user()->name }}</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,19 +34,25 @@
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="/schedule">
+        {{-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My Post">
+          <a class="nav-link" href="/dashboard/posts">
+            <i class="fa fa-fw fa-th-list"></i>
+            <span class="nav-link-text">My Post</span>
+          </a>
+        </li> --}}
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Daftar Penyewaan">
+          <a class="nav-link" href="/dashboard/schedule">
             <i class="fa fa-fw fa-th-list"></i>
             <span class="nav-link-text">Daftar Penyewaan</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="/book">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tambah Sewa">
+          <a class="nav-link" href="/dashboard/posts">
             <i class="fa fa-fw fa-plus-square"></i>
             <span class="nav-link-text">Tambah Sewa</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Rekapitulasi">
           <a class="nav-link" href="/recap">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Rekapitulasi</span>
@@ -61,7 +67,7 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <form class="form-inline my-2 my-lg-0 mr-lg-2">
             <div class="input-group">
               <input class="form-control" type="text" placeholder="Cari...">
@@ -72,10 +78,14 @@
               </span>
             </div>
           </form>
-        </li>
+        </li> --}}
         <li class="nav-item">
-          <a href="/login" class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+          <form action="/logout" method="post">
+            @csrf
+            <button type="submit" class="btn btn-dark"><i class="fa fa-fw fa-sign-out"></i>Logout</a></button>
+            {{-- <a href="#" type="submit" class="nav-link">
+              <i class="fa fa-fw fa-sign-out"></i>Logout</a> --}}
+          </form>
         </li>
       </ul>
     </div>
@@ -98,7 +108,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Your Website 2017</small>
+          <small>Sistem Informasi Booking Online Lapangan Futsal</small>
         </div>
       </div>
     </footer>
@@ -109,19 +119,19 @@
 
 
       <!-- Bootstrap core JavaScript-->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="../../../vendor/jquery/jquery.min.js"></script>
+      <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
       <!-- Core plugin JavaScript-->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
       <!-- Page level plugin JavaScript-->
-      <script src="vendor/chart.js/Chart.min.js"></script>
-      <script src="vendor/datatables/jquery.dataTables.js"></script>
-      <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+      <script src="../../../vendor/chart.js/Chart.min.js"></script>
+      <script src="../../../vendor/datatables/jquery.dataTables.js"></script>
+      <script src="../../../vendor/datatables/dataTables.bootstrap4.js"></script>
       <!-- Custom scripts for all pages-->
-      <script src="js/sb-admin.min.js"></script>
+      <script src="../../../js/sb-admin.min.js"></script>
       <!-- Custom scripts for this page-->
-      <script src="js/sb-admin-datatables.min.js"></script>
-      <script src="js/sb-admin-charts.min.js"></script>
+      <script src="../../../js/sb-admin-datatables.min.js"></script>
+      <script src="../../../js/sb-admin-charts.min.js"></script>
 
 </body>
 

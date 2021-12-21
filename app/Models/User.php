@@ -17,11 +17,17 @@ class User extends Authenticatable
      *
      * @var string[]
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    // ];
+    protected $guarded = ['id'];
+
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
